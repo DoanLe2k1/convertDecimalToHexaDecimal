@@ -10,13 +10,11 @@ function handleArrayInput(array) {
   var invalidElements = array.filter(function(element) {
       return element === undefined || element === null || typeof element !== "number" || isNaN(element);
   });
-
   if (invalidElements.length > 0) {
       return "Invalid input: all elements in the array must be valid numbers.";
   } else if (array.length === 0) {
       return "Invalid input: the array must have value.";
   }
-
   return array.map(decimalToHexadecimal);
 }
 function handleSingleInput(singleNumber) {
@@ -25,7 +23,6 @@ function handleSingleInput(singleNumber) {
   } else if (typeof singleNumber !== "number" || isNaN(singleNumber)) {
       return "Invalid input: the input must be type Number.";
   }
-
   return decimalToHexadecimal(singleNumber);
 }
 
