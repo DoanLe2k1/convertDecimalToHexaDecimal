@@ -17,6 +17,7 @@ function handleArrayInput(array) {
   }
   return array.map(decimalToHexadecimal);
 }
+
 function handleSingleInput(singleNumber) {
   if (singleNumber === null || singleNumber === undefined) {
       return "Invalid input: the input must be type Number.";
@@ -31,15 +32,15 @@ function decimalToHexadecimal(decimalNumber) {
       return "0";
   }
   var hexadecimalDigits = '0123456789ABCDEF';
-  var resultString = "";
+  var result = "";
   while (decimalNumber > 0) {
-      resultString = hexadecimalDigits[decimalNumber % 16] + resultString;
+    result = hexadecimalDigits[decimalNumber % 16] + result;
       decimalNumber = Math.floor(decimalNumber / 16);
   }
-  return resultString;
+  return result;
 }
 
-  function testConvertDecimalToHexadecimal() {
+function testConvertDecimalToHexadecimal() {
     let testArrays = [
       [0, "0"],
       [1, "1"],
